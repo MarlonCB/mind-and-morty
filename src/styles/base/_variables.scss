@@ -1,0 +1,60 @@
+// ─── Colors ───────────────────────────────────────────────────────────────────
+$color-primary:     #00b5cc;
+$color-secondary:   #97ce4c;
+$color-accent:      #e89242;
+
+$color-bg:          #1c1d3b;
+$color-bg-surface:  #16213e;
+$color-bg-card:     #0f3460;
+
+$color-text:        #f5f5f5;
+$color-text-muted:  #a0a0b0;
+
+$color-success:     #4caf50;
+$color-warning:     #ff9800;
+$color-error:       #f44336;
+
+// ─── Spacing ──────────────────────────────────────────────────────────────────
+$space-1:  4px;
+$space-2:  8px;
+$space-3:  12px;
+$space-4:  16px;
+$space-5:  24px;
+$space-6:  32px;
+$space-7:  48px;
+$space-8:  64px;
+
+// ─── Typography ───────────────────────────────────────────────────────────────
+$font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-family-mono: 'Fira Code', 'Consolas', monospace;
+
+$font-size-xs:  12px;
+$font-size-sm:  14px;
+$font-size-md:  16px;
+$font-size-lg:  20px;
+$font-size-xl:  24px;
+$font-size-2xl: 32px;
+$font-size-3xl: 48px;
+
+$font-weight-regular: 400;
+$font-weight-medium:  500;
+$font-weight-bold:    700;
+
+// ─── Borders ──────────────────────────────────────────────────────────────────
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+$border-radius-full: 9999px;
+
+// ─── Breakpoints ──────────────────────────────────────────────────────────────
+$breakpoint-sm:  480px;
+$breakpoint-md:  768px;
+$breakpoint-lg:  1024px;
+$breakpoint-xl:  1280px;
+
+// ─── Z-index ──────────────────────────────────────────────────────────────────
+$z-base:    0;
+$z-above:   10;
+$z-modal:   100;
+$z-overlay: 200;
+$z-toast:   300;

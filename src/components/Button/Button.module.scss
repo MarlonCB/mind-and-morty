@@ -1,0 +1,56 @@
+$btn-shadow: -1px 1px 4px rgba(0, 0, 0, 0.2);
+$btn-border-width: 0 0 4px 4px;
+$btn-border-style: solid;
+
+$font-family: 'Montserrat', sans-serif;
+$font-weight: 600;
+$font-size: 24px;
+$letter-spacing: 0.1em;
+
+.button {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  text-align: center;
+
+  border-style: $btn-border-style;
+  border-width: $btn-border-width;
+
+  height: 60px;
+  box-shadow: $btn-shadow;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #a2f2f9;
+  color: #233a59;
+  border-color: #d8e054;
+
+  &:hover {
+    background-color: #49d5e1;
+    border-color: #e6ec59;
+  }
+
+  &:active {
+    background-color: #1a7a83;
+    color: #ffffff;
+    border-color: #e6ec59;
+  }
+}
+
+.secondary {
+  background-color: #d8e054;
+  color: #233a59;
+  border-color: #a2f2f9;
+
+  &:hover {
+    background-color: #b1b83b;
+  }
+
+  &:active {
+    background-color: #73781c;
+    color: #ffffff;
+  }
+}
