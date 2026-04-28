@@ -1,6 +1,9 @@
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import type { InputProps } from '../../types'
 
+// Iconos inline en SVG para evitar dependencias externas y mantener
+// el bundle pequeño. Se definen como componentes en lugar de JSX directo
+// para mejorar la legibilidad del componente Input principal.
 const EyeIcon = () => (
   <svg
     width="20"
@@ -34,6 +37,15 @@ const EyeOffIcon = () => (
   </svg>
 )
 
+/**
+ * Campo de texto controlado con soporte para mostrar/ocultar contraseña.
+ *
+ * Accesibilidad:
+ *  - useId() genera un ID único garantizado por React, solucionando el problema
+ *    de IDs duplicados que ocurriría si dos campos del mismo tipo (`password`)
+ *    usaran `input-${type}` como ID. El ID vincula el <label> al <input> via htmlFor.
+ *  - aria-label en el botón de toggle comunica su función a lectores de pantalla.
+ */
 export const Input = ({
   type,
   label,
@@ -44,8 +56,16 @@ export const Input = ({
   required,
 }: InputProps) => {
   const [showPassword, setShowPassword] = useState(false)
-  const id = `input-${type}`
+
+  // useId genera un ID único por instancia del componente (e.g. ":r0:", ":r1:")
+  // garantizando que label y input queden correctamente asociados incluso si
+  // hay múltiples instancias del mismo tipo en el DOM.
+  const id = useId()
+
   const isPassword = type === 'password'
+
+  // Si el campo es password y el toggle está activo, se muestra como texto;
+  // en cualquier otro caso se usa el tipo original del prop.
   const resolvedType = isPassword && showPassword ? 'text' : type
 
   return (
@@ -62,11 +82,14 @@ export const Input = ({
           placeholder={placeholder}
           disabled={disabled}
           required={required}
+          // La clase con-icono añade padding-right para que el texto no quede
+          // tapado por el botón de toggle cuando el campo es de contraseña.
           className={`input__control${isPassword ? ' input__control--with-icon' : ''}`}
         />
+        {/* El botón de toggle solo existe para campos de contraseña */}
         {isPassword && (
           <button
-            type="button"
+            type="button" // evita que este botón envíe el formulario padre
             className="input__toggle"
             onClick={() => setShowPassword((prev) => !prev)}
             aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
