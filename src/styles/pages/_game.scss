@@ -11,7 +11,6 @@
 
   @media (max-width: $breakpoint-md) {
     justify-content: flex-start;
-    padding: $space-4;
   }
 
   &__loading {
@@ -42,6 +41,25 @@
     @media (max-width: $breakpoint-md) {
       grid-template-columns: repeat(3, 1fr);
       gap: $space-2;
+    }
+  }
+
+  &__hud {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: $space-3;
+    border-bottom: $hud-border;
+  }
+
+  &__hud-item {
+    font-family: $font-family-display;
+    font-size: $font-size-md;
+    color: $color-input-label;
+
+    strong {
+      font-weight: $font-weight-bold;
+      color: $color-btn-primary-text;
     }
   }
 

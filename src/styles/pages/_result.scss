@@ -1,0 +1,89 @@
+@use '../base/variables' as *;
+
+// Morty corre de derecha a izquierda por la pantalla en bucle
+@keyframes morty-run {
+  from {
+    transform: translateX(calc(100vw + 150px));
+  }
+  to {
+    transform: translateX(-150px);
+  }
+}
+
+.result-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-5;
+  padding: $space-4;
+  overflow: hidden;
+
+  &__logo {
+    width: $logo-width;
+    height: auto;
+
+    @media (max-width: $breakpoint-md) {
+      width: $logo-width-sm;
+    }
+  }
+
+  // El portal está en la esquina inferior derecha — punto de entrada de Morty
+  &__portal {
+    position: fixed;
+    bottom: -10px;
+    right: -40px;
+    height: $portal-height;
+    width: auto;
+    pointer-events: none;
+    z-index: $z-above;
+
+    @media (max-width: $breakpoint-md) {
+      height: $portal-height-sm;
+    }
+  }
+
+  &__morty {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: $morty-height;
+    width: auto;
+    animation: morty-run 8s linear infinite;
+    pointer-events: none;
+    z-index: $z-above;
+
+    @media (max-width: $breakpoint-md) {
+      height: $morty-height-sm;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-5;
+    width: 100%;
+  }
+
+  &__title {
+    font-family: $font-family-display;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-btn-primary-text;
+    text-align: center;
+  }
+
+  &__score {
+    font-family: $font-family-display;
+    font-size: $font-size-lg;
+    color: $color-input-label;
+    text-align: center;
+
+    strong {
+      font-weight: $font-weight-bold;
+      color: $color-btn-primary-text;
+    }
+  }
+}

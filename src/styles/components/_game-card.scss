@@ -1,9 +1,13 @@
 @use '../base/variables' as *;
 
+// Tarjeta con flip 3D: dos caras posicionadas absolutamente dentro de un contenedor preserve-3d.
+// La cara frontal empieza rotada 180° para estar oculta por defecto.
+// Animar el div interno a rotateY(180°) revela la cara frontal
+// y oculta la trasera — ambas con backface-visibility: hidden.
 .game-card {
   width: 100%;
   aspect-ratio: 1 / 1;
-  perspective: 1000px;
+  perspective: $card-perspective;
   cursor: pointer;
 
   &__inner {
@@ -32,6 +36,7 @@
     box-shadow: $shadow-card;
   }
 
+  // Pre-rotada para estar oculta inicialmente; visible cuando el inner llega a rotateY(180°)
   &__front {
     transform: rotateY(180deg);
   }

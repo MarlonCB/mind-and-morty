@@ -4,11 +4,11 @@
   font-family: $font-family-display;
   font-weight: $font-weight-semibold;
   font-size: $font-size-xl;
-  letter-spacing: 0.1em;
+  letter-spacing: $btn-letter-spacing;
   text-align: center;
   border-style: solid;
   border-width: $border-btn-width;
-  padding: 12px 80px;
+  padding: $btn-padding-y $btn-padding-x;
   box-shadow: $shadow-btn;
   border-radius: $border-radius-md;
   cursor: pointer;

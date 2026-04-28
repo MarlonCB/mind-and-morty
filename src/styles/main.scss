@@ -3,13 +3,14 @@
 @use 'base/reset';
 @use 'base/typography';
 
-// Components
+// Componentes
 @use 'components/button';
 @use 'components/card';
 @use 'components/game-card';
 @use 'components/input';
 @use 'components/login-form';
 
-// Pages
+// Páginas
 @use 'pages/login';
 @use 'pages/game';
+@use 'pages/result';

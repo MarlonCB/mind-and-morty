@@ -1,28 +1,28 @@
 import { motion } from 'framer-motion'
+import type { GameCardProps } from '../../types'
 
-interface GameCardData {
-  id: number
-  characterId: number
-  name: string
-  image: string
+const shakeAnimation = {
+  x: [0, -10, 10, -10, 10, -6, 6, 0],
+  transition: { duration: 0.5 },
 }
 
-type GameCardProps = {
-  card: GameCardData
-  isFlipped: boolean
-  isMatched: boolean
-  onClick: () => void
+const matchAnimation = {
+  scale: [1, 1.12, 1],
+  transition: { duration: 0.4 },
 }
 
-export const GameCard = ({ card, isFlipped, isMatched, onClick }: GameCardProps) => {
+export const GameCard = ({ card, isFlipped, isMatched, isError, onClick }: GameCardProps) => {
   const shouldShowFront = isFlipped || isMatched
 
   return (
     <motion.div
+      layout
+      layoutId={`card-${card.id}`}
       className={`game-card${isMatched ? ' game-card--matched' : ''}`}
       onClick={onClick}
-      whileHover={!isMatched ? { scale: 1.05 } : undefined}
-      whileTap={!isMatched ? { scale: 0.95 } : undefined}
+      animate={isError ? shakeAnimation : isMatched ? matchAnimation : {}}
+      whileHover={!isMatched && !isError ? { scale: 1.05 } : undefined}
+      whileTap={!isMatched && !isError ? { scale: 0.95 } : undefined}
     >
       <motion.div
         className="game-card__inner"

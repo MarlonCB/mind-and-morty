@@ -1,103 +1,115 @@
-// ─── Colors — Base palette ────────────────────────────────────────────────────
-$color-primary:     #00b5cc;
-$color-secondary:   #97ce4c;
-$color-accent:      #e89242;
+// ─── Colores — Paleta base ────────────────────────────────────────────────────
+$color-bg: #1c1d3b;
+$color-text: #f5f5f5;
 
-$color-bg:          #1c1d3b;
-$color-bg-surface:  #16213e;
-$color-bg-card:     #0f3460;
+$color-error: #f44336;
 
-$color-text:        #f5f5f5;
-$color-text-muted:  #a0a0b0;
+// ─── Colores — Componentes UI ─────────────────────────────────────────────────
+$color-card-bg: #fffac2; // fondo del contenedor amarillo
+$color-card-face-dark: #1a1a2e; // fondo de la cara de la tarjeta de juego
 
-$color-success:     #4caf50;
-$color-warning:     #ff9800;
-$color-error:       #f44336;
-
-// ─── Colors — UI components ───────────────────────────────────────────────────
-$color-card-bg:           #fffac2;   // yellow card container
-$color-card-face-dark:    #1a1a2e;   // game card face background
-
-// Button — Primary
-$color-btn-primary-bg:           #a2f2f9;
-$color-btn-primary-text:         #233a59;
-$color-btn-primary-border:       #d8e054;
-$color-btn-primary-hover-bg:     #49d5e1;
+// Botón — Primario
+$color-btn-primary-bg: #a2f2f9;
+$color-btn-primary-text: #233a59;
+$color-btn-primary-border: #d8e054;
+$color-btn-primary-hover-bg: #49d5e1;
 $color-btn-primary-hover-border: #e6ec59;
-$color-btn-primary-active-bg:    #1a7a83;
-$color-btn-primary-active-text:  #ffffff;
+$color-btn-primary-active-bg: #1a7a83;
+$color-btn-primary-active-text: #ffffff;
 
-// Button — Secondary
-$color-btn-secondary-bg:         #d8e054;
-$color-btn-secondary-text:       #233a59;
-$color-btn-secondary-border:     #a2f2f9;
-$color-btn-secondary-hover-bg:   #b1b83b;
-$color-btn-secondary-active-bg:  #73781c;
+// Botón — Secundario
+$color-btn-secondary-bg: #d8e054;
+$color-btn-secondary-text: #233a59;
+$color-btn-secondary-border: #a2f2f9;
+$color-btn-secondary-hover-bg: #b1b83b;
+$color-btn-secondary-active-bg: #73781c;
 $color-btn-secondary-active-text: #ffffff;
 
-// Input / Form
-$color-input-border:      #212c31;
-$color-input-label:       #313d49;
+// Input / Formulario
+$color-input-border: #212c31;
+$color-input-label: #313d49;
 $color-input-placeholder: #a0a0a0;
-$color-link:              #2b8787;
+$color-link: #2b8787;
 
-// ─── Spacing ──────────────────────────────────────────────────────────────────
-$space-1:  4px;
-$space-2:  8px;
-$space-3:  12px;
-$space-4:  16px;
-$space-5:  24px;
-$space-6:  32px;
-$space-7:  48px;
-$space-8:  64px;
+// Separador del HUD
+$color-hud-border: rgba(0, 0, 0, 0.1);
 
-// ─── Typography ───────────────────────────────────────────────────────────────
-$font-family-base:    'Inter', system-ui, -apple-system, sans-serif;
+// ─── Espaciado — escala rem (base 16px) ──────────────────────────────────────
+$space-2: 0.5rem; //  8px
+$space-3: 0.75rem; // 12px
+$space-4: 1rem; // 16px
+$space-5: 1.5rem; // 24px
+$space-6: 2rem; // 32px
+$space-7: 3rem; // 48px
+
+// ─── Tipografía ───────────────────────────────────────────────────────────────
+$font-family-base:
+  'Inter',
+  system-ui,
+  -apple-system,
+  sans-serif;
 $font-family-display: 'Montserrat', sans-serif;
-$font-family-mono:    'Fira Code', 'Consolas', monospace;
 
-$font-size-xs:  12px;
-$font-size-sm:  14px;
-$font-size-md:  16px;
-$font-size-lg:  20px;
-$font-size-xl:  24px;
-$font-size-2xl: 32px;
-$font-size-3xl: 48px;
+$font-size-sm: 0.875rem; // 14px
+$font-size-md: 1rem; // 16px
+$font-size-lg: 1.25rem; // 20px
+$font-size-xl: 1.5rem; // 24px
+$font-size-2xl: 2rem; // 32px
 
 $font-weight-regular: 400;
-$font-weight-medium:  500;
 $font-weight-semibold: 600;
-$font-weight-bold:    700;
+$font-weight-bold: 700;
 
-// ─── Borders ──────────────────────────────────────────────────────────────────
-$border-radius-sm:   4px;
-$border-radius-md:   8px;
-$border-radius-lg:   12px;
-$border-radius-xl:   16px;
-$border-radius-full: 9999px;
+// ─── Bordes ───────────────────────────────────────────────────────────────────
+$border-radius-md: 0.5rem; //  8px
+$border-radius-lg: 0.75rem; // 12px
+$border-radius-xl: 1rem; // 16px
 
+// Borde inferior del botón (efecto 3D presionado)
 $border-btn-width: 0 0 4px 4px;
 
-// ─── Shadows ──────────────────────────────────────────────────────────────────
-$shadow-btn:  -1px 1px 4px rgba(0, 0, 0, 0.2);
+// ─── Sombras ──────────────────────────────────────────────────────────────────
+$shadow-btn: -1px 1px 4px rgba(0, 0, 0, 0.2);
 $shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3);
 
-// ─── Component sizes ──────────────────────────────────────────────────────────
-$input-height:     60px;
-$logo-width:       220px;
-$logo-width-sm:    160px;
-$game-card-width:  720px;
-$login-card-width: 480px;
+// ─── Tokens de componentes ────────────────────────────────────────────────────
 
-// ─── Breakpoints ──────────────────────────────────────────────────────────────
-$breakpoint-sm:  480px;
-$breakpoint-md:  600px;
-$breakpoint-lg:  1024px;
-$breakpoint-xl:  1280px;
+// Botón
+$btn-padding-y: 0.75rem; // 12px
+$btn-padding-x: 5rem; // 80px
+$btn-letter-spacing: 0.1em;
 
-// ─── Z-index ──────────────────────────────────────────────────────────────────
-$z-base:    0;
-$z-above:   10;
-$z-modal:   100;
-$z-overlay: 200;
-$z-toast:   300;
+// Tarjeta de login
+$card-padding-x: 3.5rem; // 56px — relleno horizontal del contenedor amarillo
+$login-card-width: 30rem; // 480px
+
+// Diseño del juego
+$game-card-width: 45rem; // 720px
+
+// Input
+$input-height: 3.75rem; // 60px
+$input-border-width: 1.78px; // sub-píxel, en px intencional
+$input-padding-icon: 3rem; // 48px — relleno derecho cuando hay ícono de toggle
+$input-toggle-offset: 0.875rem; // 14px — distancia desde el borde derecho
+
+// Logo
+$logo-width: 13.75rem; // 220px
+$logo-width-sm: 10rem; // 160px
+
+// Morty y Portal (decoración de la página de resultados)
+$morty-height: 7.5rem; // 120px
+$morty-height-sm: 5rem; // 80px
+$portal-height: 12.5rem; // 200px
+$portal-height-sm: 8.75rem; // 140px
+
+// Flip 3D de tarjeta — profundidad de perspectiva (px intencional, no rem)
+$card-perspective: 1000px;
+
+// Divisor del HUD
+$hud-border: 2px solid $color-hud-border;
+
+// ─── Breakpoints — en px para media queries predecibles ──────────────────────
+$breakpoint-md: 600px;
+
+// ─── Escala z-index ───────────────────────────────────────────────────────────
+$z-above: 10;

@@ -9,10 +9,12 @@ const MOCK_CREDENTIALS = {
 
 const TOKEN_KEY = 'authToken'
 
+const storedToken = localStorage.getItem(TOKEN_KEY)
+
 export const useAuthStore = create<AuthState>((set) => ({
-  isAuthenticated: false,
-  token: null,
-  user: null,
+  isAuthenticated: !!storedToken,
+  token: storedToken,
+  user: storedToken ? { email: MOCK_CREDENTIALS.email } : null,
 
   login: async (email, password) => {
     await new Promise((resolve) => setTimeout(resolve, 800))
@@ -29,13 +31,18 @@ export const useAuthStore = create<AuthState>((set) => ({
 
   logout: () => {
     localStorage.removeItem(TOKEN_KEY)
+    localStorage.removeItem('game-result')
     set({ isAuthenticated: false, token: null, user: null })
   },
 
   checkAuth: () => {
     const token = localStorage.getItem(TOKEN_KEY)
     if (token) {
-      set({ isAuthenticated: true, token, user: { email: MOCK_CREDENTIALS.email } })
+      set({
+        isAuthenticated: true,
+        token,
+        user: { email: MOCK_CREDENTIALS.email },
+      })
     }
   },
 }))

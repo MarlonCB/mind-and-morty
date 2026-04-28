@@ -49,7 +49,7 @@ export default function Login() {
           required
           disabled={isLoading}
         />
-        {error && <p>{error}</p>}
+        {error && <p className="login-form__error">{error}</p>}
         <Button type="submit" disabled={isLoading}>
           {isLoading ? 'Ingresando...' : 'Iniciar sesión'}
         </Button>

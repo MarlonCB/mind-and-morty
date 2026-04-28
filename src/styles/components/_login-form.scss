@@ -6,6 +6,13 @@
   gap: $space-5;
   width: 100%;
 
+  &__error {
+    font-family: $font-family-display;
+    font-size: $font-size-sm;
+    color: $color-error;
+    text-align: center;
+  }
+
   &__forgot {
     font-family: $font-family-display;
     font-size: $font-size-sm;

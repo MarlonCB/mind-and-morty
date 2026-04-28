@@ -17,7 +17,7 @@
 
   &__control {
     height: $input-height;
-    border: 1.78px solid $color-input-border;
+    border: $input-border-width solid $color-input-border;
     border-radius: $border-radius-md;
     padding: 0 $space-4;
     width: 100%;
@@ -30,14 +30,15 @@
       color: $color-input-placeholder;
     }
 
+    // Relleno derecho extra para evitar que el texto tape el botón de toggle
     &--with-icon {
-      padding-right: 48px;
+      padding-right: $input-padding-icon;
     }
   }
 
   &__toggle {
     position: absolute;
-    right: 14px;
+    right: $input-toggle-offset;
     top: 50%;
     transform: translateY(-50%);
     background: none;
