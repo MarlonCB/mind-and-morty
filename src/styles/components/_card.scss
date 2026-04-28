@@ -1,0 +1,25 @@
+@use '../base/variables' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: $space-5;
+  padding: $space-7 56px;
+  background-color: $color-card-bg;
+  border-radius: $border-radius-xl;
+  min-width: $login-card-width;
+
+  @media (max-width: $breakpoint-md) {
+    width: 100%;
+    min-width: unset;
+    padding: $space-6 $space-4;
+    border-radius: $border-radius-lg;
+  }
+
+  &__logo {
+    width: $logo-width;
+    height: auto;
+    align-self: center;
+  }
+}

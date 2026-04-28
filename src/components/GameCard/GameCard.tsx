@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import styles from './GameCard.module.scss'
 
 interface GameCardData {
   id: number
@@ -15,36 +14,26 @@ type GameCardProps = {
   onClick: () => void
 }
 
-export const GameCard = ({
-  card,
-  isFlipped,
-  isMatched,
-  onClick,
-}: GameCardProps) => {
+export const GameCard = ({ card, isFlipped, isMatched, onClick }: GameCardProps) => {
   const shouldShowFront = isFlipped || isMatched
 
   return (
     <motion.div
-      className={`${styles.card} ${isMatched ? styles.matched : ''}`}
+      className={`game-card${isMatched ? ' game-card--matched' : ''}`}
       onClick={onClick}
       whileHover={!isMatched ? { scale: 1.05 } : undefined}
       whileTap={!isMatched ? { scale: 0.95 } : undefined}
     >
       <motion.div
-        className={styles.inner}
-        animate={{ rotateY: shouldShowFront ? 0 : 180 }}
+        className="game-card__inner"
+        animate={{ rotateY: shouldShowFront ? 180 : 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className={styles.front}>
-          <img src={card.image} alt={card.name} className={styles.image} />
-          <span className={styles.name}>{card.name}</span>
+        <div className="game-card__front">
+          <img src={card.image} alt={card.name} className="game-card__image" />
         </div>
-        <div className={styles.back}>
-          <img
-            src="/card-back-image.png"
-            alt="Card back"
-            className={styles.backImage}
-          />
+        <div className="game-card__back">
+          <img src="/card-back-image.png" alt="Card back" className="game-card__back-image" />
         </div>
       </motion.div>
     </motion.div>

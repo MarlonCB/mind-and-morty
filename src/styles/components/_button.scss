@@ -1,0 +1,47 @@
+@use '../base/variables' as *;
+
+.button {
+  font-family: $font-family-display;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-xl;
+  letter-spacing: 0.1em;
+  text-align: center;
+  border-style: solid;
+  border-width: $border-btn-width;
+  padding: 12px 80px;
+  box-shadow: $shadow-btn;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $color-btn-primary-bg;
+    color: $color-btn-primary-text;
+    border-color: $color-btn-primary-border;
+
+    &:hover {
+      background-color: $color-btn-primary-hover-bg;
+      border-color: $color-btn-primary-hover-border;
+    }
+
+    &:active {
+      background-color: $color-btn-primary-active-bg;
+      color: $color-btn-primary-active-text;
+      border-color: $color-btn-primary-hover-border;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-btn-secondary-bg;
+    color: $color-btn-secondary-text;
+    border-color: $color-btn-secondary-border;
+
+    &:hover {
+      background-color: $color-btn-secondary-hover-bg;
+    }
+
+    &:active {
+      background-color: $color-btn-secondary-active-bg;
+      color: $color-btn-secondary-active-text;
+    }
+  }
+}

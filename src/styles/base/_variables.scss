@@ -1,4 +1,4 @@
-// ─── Colors ───────────────────────────────────────────────────────────────────
+// ─── Colors — Base palette ────────────────────────────────────────────────────
 $color-primary:     #00b5cc;
 $color-secondary:   #97ce4c;
 $color-accent:      #e89242;
@@ -14,6 +14,33 @@ $color-success:     #4caf50;
 $color-warning:     #ff9800;
 $color-error:       #f44336;
 
+// ─── Colors — UI components ───────────────────────────────────────────────────
+$color-card-bg:           #fffac2;   // yellow card container
+$color-card-face-dark:    #1a1a2e;   // game card face background
+
+// Button — Primary
+$color-btn-primary-bg:           #a2f2f9;
+$color-btn-primary-text:         #233a59;
+$color-btn-primary-border:       #d8e054;
+$color-btn-primary-hover-bg:     #49d5e1;
+$color-btn-primary-hover-border: #e6ec59;
+$color-btn-primary-active-bg:    #1a7a83;
+$color-btn-primary-active-text:  #ffffff;
+
+// Button — Secondary
+$color-btn-secondary-bg:         #d8e054;
+$color-btn-secondary-text:       #233a59;
+$color-btn-secondary-border:     #a2f2f9;
+$color-btn-secondary-hover-bg:   #b1b83b;
+$color-btn-secondary-active-bg:  #73781c;
+$color-btn-secondary-active-text: #ffffff;
+
+// Input / Form
+$color-input-border:      #212c31;
+$color-input-label:       #313d49;
+$color-input-placeholder: #a0a0a0;
+$color-link:              #2b8787;
+
 // ─── Spacing ──────────────────────────────────────────────────────────────────
 $space-1:  4px;
 $space-2:  8px;
@@ -25,8 +52,9 @@ $space-7:  48px;
 $space-8:  64px;
 
 // ─── Typography ───────────────────────────────────────────────────────────────
-$font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
-$font-family-mono: 'Fira Code', 'Consolas', monospace;
+$font-family-base:    'Inter', system-ui, -apple-system, sans-serif;
+$font-family-display: 'Montserrat', sans-serif;
+$font-family-mono:    'Fira Code', 'Consolas', monospace;
 
 $font-size-xs:  12px;
 $font-size-sm:  14px;
@@ -38,17 +66,32 @@ $font-size-3xl: 48px;
 
 $font-weight-regular: 400;
 $font-weight-medium:  500;
+$font-weight-semibold: 600;
 $font-weight-bold:    700;
 
 // ─── Borders ──────────────────────────────────────────────────────────────────
-$border-radius-sm: 4px;
-$border-radius-md: 8px;
-$border-radius-lg: 16px;
+$border-radius-sm:   4px;
+$border-radius-md:   8px;
+$border-radius-lg:   12px;
+$border-radius-xl:   16px;
 $border-radius-full: 9999px;
+
+$border-btn-width: 0 0 4px 4px;
+
+// ─── Shadows ──────────────────────────────────────────────────────────────────
+$shadow-btn:  -1px 1px 4px rgba(0, 0, 0, 0.2);
+$shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+// ─── Component sizes ──────────────────────────────────────────────────────────
+$input-height:     60px;
+$logo-width:       220px;
+$logo-width-sm:    160px;
+$game-card-width:  720px;
+$login-card-width: 480px;
 
 // ─── Breakpoints ──────────────────────────────────────────────────────────────
 $breakpoint-sm:  480px;
-$breakpoint-md:  768px;
+$breakpoint-md:  600px;
 $breakpoint-lg:  1024px;
 $breakpoint-xl:  1280px;
 

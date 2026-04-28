@@ -1,0 +1,51 @@
+@use '../base/variables' as *;
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+
+  &__label {
+    font-family: $font-family-display;
+    font-weight: $font-weight-semibold;
+    color: $color-input-label;
+  }
+
+  &__field {
+    position: relative;
+  }
+
+  &__control {
+    height: $input-height;
+    border: 1.78px solid $color-input-border;
+    border-radius: $border-radius-md;
+    padding: 0 $space-4;
+    width: 100%;
+    font-family: $font-family-display;
+    font-size: $font-size-md;
+    outline: none;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $color-input-placeholder;
+    }
+
+    &--with-icon {
+      padding-right: 48px;
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $color-input-border;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+}

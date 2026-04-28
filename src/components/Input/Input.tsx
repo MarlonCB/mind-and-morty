@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import styles from './Input.module.scss'
 
 type InputProps = {
   type: 'email' | 'password'
@@ -33,11 +32,11 @@ export const Input = ({ type, label, value, onChange, placeholder, disabled, req
   const resolvedType = isPassword && showPassword ? 'text' : type
 
   return (
-    <div className={styles.wrapper}>
-      <label htmlFor={id} className={styles.label}>
+    <div className="input">
+      <label htmlFor={id} className="input__label">
         {label}
       </label>
-      <div className={styles.field}>
+      <div className="input__field">
         <input
           id={id}
           type={resolvedType}
@@ -46,12 +45,12 @@ export const Input = ({ type, label, value, onChange, placeholder, disabled, req
           placeholder={placeholder}
           disabled={disabled}
           required={required}
-          className={`${styles.input} ${isPassword ? styles.withIcon : ''}`}
+          className={`input__control${isPassword ? ' input__control--with-icon' : ''}`}
         />
         {isPassword && (
           <button
             type="button"
-            className={styles.toggleButton}
+            className="input__toggle"
             onClick={() => setShowPassword((prev) => !prev)}
             aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
           >

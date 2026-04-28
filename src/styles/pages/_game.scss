@@ -1,27 +1,52 @@
+@use '../base/variables' as *;
+
 .game-page {
   min-height: 100vh;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: $space-5;
+  padding: $space-4;
 
-  &__hud {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 24px;
-    font-size: 1.125rem;
-    color: #fff;
+  @media (max-width: $breakpoint-md) {
+    justify-content: flex-start;
+    padding: $space-4;
+  }
+
+  &__loading {
+    color: $color-text;
+    font-size: $font-size-lg;
+  }
+
+  &__logo {
+    width: $logo-width;
+    height: auto;
+
+    @media (max-width: $breakpoint-md) {
+      width: $logo-width-sm;
+    }
+  }
+
+  &__card {
+    width: $game-card-width;
+    max-width: calc(100vw - #{$space-7});
   }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    max-width: 600px;
+    gap: $space-3;
     width: 100%;
 
-    @media (max-width: 600px) {
+    @media (max-width: $breakpoint-md) {
       grid-template-columns: repeat(3, 1fr);
+      gap: $space-2;
     }
+  }
+
+  &__start {
+    display: flex;
+    justify-content: center;
   }
 }

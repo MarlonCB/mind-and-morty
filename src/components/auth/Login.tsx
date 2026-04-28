@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../../store'
 import { Input, Button, Card } from '../index'
-import styles from './Login.module.scss'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -31,7 +30,7 @@ export default function Login() {
 
   return (
     <Card>
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <form onSubmit={handleSubmit} className="login-form">
         <Input
           type="email"
           label="Email"
@@ -54,7 +53,7 @@ export default function Login() {
         <Button type="submit" disabled={isLoading}>
           {isLoading ? 'Ingresando...' : 'Iniciar sesión'}
         </Button>
-        <button type="button" className={styles.forgotPassword}>
+        <button type="button" className="login-form__forgot">
           ¿Olvidaste tu usuario o contraseña?
         </button>
       </form>

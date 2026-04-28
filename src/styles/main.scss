@@ -1,3 +1,15 @@
-@use 'base/index' as *;
-@use 'utilities/index' as *;
-@use 'pages/index';
+// Base
+@use 'base/variables' as *;
+@use 'base/reset';
+@use 'base/typography';
+
+// Components
+@use 'components/button';
+@use 'components/card';
+@use 'components/game-card';
+@use 'components/input';
+@use 'components/login-form';
+
+// Pages
+@use 'pages/login';
+@use 'pages/game';

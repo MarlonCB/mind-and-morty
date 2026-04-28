@@ -1,0 +1,23 @@
+@use '../base/variables' as *;
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  width: 100%;
+
+  &__forgot {
+    font-family: $font-family-display;
+    font-size: $font-size-sm;
+    color: $color-link;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

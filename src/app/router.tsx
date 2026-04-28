@@ -1,20 +1,9 @@
-import { useEffect } from 'react'
-import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { RootLayout } from './layouts/RootLayout'
-import { useAuthStore } from '../store'
+import { ProtectedRoute } from './ProtectedRoute'
 import LoginPage from '../pages/LoginPage'
 import GamePage from '../pages/GamePage'
 import ResultPage from '../pages/ResultPage'
-
-function ProtectedRoute() {
-  const { isAuthenticated, checkAuth } = useAuthStore()
-
-  useEffect(() => {
-    checkAuth()
-  }, [checkAuth])
-
-  return isAuthenticated ? <Outlet /> : <Navigate to="/" replace />
-}
 
 export const router = createBrowserRouter([
   {

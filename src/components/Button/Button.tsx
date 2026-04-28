@@ -1,5 +1,3 @@
-import styles from './Button.module.scss'
-
 type ButtonProps = {
   variant?: 'primary' | 'secondary'
   children: React.ReactNode
@@ -12,7 +10,7 @@ type ButtonProps = {
 export const Button = ({ variant = 'primary', children, onClick, disabled, type = 'button', className }: ButtonProps) => {
   return (
     <button
-      className={`${styles.button} ${styles[variant]}${className ? ` ${className}` : ''}`}
+      className={`button button--${variant}${className ? ` ${className}` : ''}`}
       onClick={onClick}
       disabled={disabled}
       type={type}
